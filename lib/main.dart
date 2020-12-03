@@ -29,6 +29,11 @@ class MyHomePage extends StatelessWidget {
       date: DateTime.now(),
     ),
   ];
+
+  // String titleInput;
+  // String amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,10 +55,36 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           Card(
+            elevation: 5,
             child: Container(
+              padding: EdgeInsets.all(10),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  TextField(),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Title',
+                    ),
+                    // onChanged: (val) {
+                    //   titleInput = val;
+                    // },
+                    controller: titleController,
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Amount',
+                    ),
+                    // onChanged: (val) => amountInput = val,
+                    controller: amountController,
+                  ),
+                  FlatButton(
+                    onPressed: () {
+                      print(titleController.text);
+                      print(amountController.text);
+                    },
+                    child: Text('Add Transaction'),
+                    textColor: Colors.purple,
+                  )
                 ],
               ),
             ),
