@@ -50,10 +50,12 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           Card(
-            child: Column(
-              children: [
-                TextField(),
-              ],
+            child: Container(
+              child: Column(
+                children: [
+                  TextField(),
+                ],
+              ),
             ),
           ),
           Column(
